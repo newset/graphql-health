@@ -1,0 +1,4 @@
+type Query {
+	article(id: String!): Article
+	recommends(id: String!, topic: String!): [Article]
+}

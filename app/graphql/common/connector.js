@@ -1,6 +1,6 @@
 const { request } = require("../utils");
 
-class ArticleConnector {
+class Connector {
 	constructor(ctx) {
 		this.ctx = ctx;
 		this.rpc = request.bind(this);
@@ -23,4 +23,4 @@ class ArticleConnector {
 	}
 }
 
-module.exports = ArticleConnector;
+module.exports = Connector;

@@ -2,3 +2,11 @@ type User {
 	id: ID!
 	name: String!
 }
+
+type Article {
+	articleId: ID!
+	topicId: ID!
+	title: String!
+	pic: String
+	cover: String
+}

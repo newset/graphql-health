@@ -8,7 +8,6 @@
 		"egg-graphql": "^2.1.0"
 	},
 	"devDependencies": {
-		"autod": "^3.0.1",
 		"egg-bin": "^4.3.7",
 		"egg-ci": "^1.8.0",
 		"eslint": "^4.18.1",
@@ -22,7 +21,8 @@
 		"dev": "egg-bin dev",
 		"autod": "autod",
 		"lint": "eslint .",
-		"test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+		"test":
+			"npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
 		"test-local": "egg-bin test",
 		"cov": "egg-bin cov",
 		"ci": "npm run lint && egg-bin pkgfiles --check && npm run cov",
@@ -31,18 +31,12 @@
 	"ci": {
 		"version": "8"
 	},
-	"eslintIgnore": [
-		"coverage",
-		"dist"
-	],
+	"eslintIgnore": ["coverage", "dist"],
 	"repository": {
 		"type": "git",
 		"url": ""
 	},
-	"files": [
-		"lib",
-		"index.js"
-	],
+	"files": ["lib", "index.js"],
 	"author": "luojieyy@gmail.com",
 	"license": "MIT"
 }

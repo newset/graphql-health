@@ -1,0 +1,8 @@
+{
+	"apps": [
+		{
+			"name": "health-graphal",
+			"script": "node_modules/egg-scripts/bin/egg-scripts.js start"
+		}
+	]
+}

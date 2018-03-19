@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    container_name: health-graphql
+    image: daijie/eggjs
+    volumes:
+      - ../:/usr/src/app
+    ports:
+      - "${HTTP_PORT}:7001"
+    entrypoint: "npm start"
+    environment:
+      REDIS_ENDPOINT: redis://redis:6379/0
+
+

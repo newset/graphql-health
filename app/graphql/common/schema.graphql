@@ -10,3 +10,22 @@ type Article {
 	pic: String
 	cover: String
 }
+
+type Goods {
+	goodsType: ID!
+	goodsName: String!
+	goodsPrice: String!
+	goodsDes: String!
+	imgs: String!
+}
+
+type Building {
+	buildingID: String!
+	buildingName: String!
+	longitude: String!
+	latitude: String!
+	distance: String!
+	machineNum: String!
+	address: String!
+	floorStr: String!
+}

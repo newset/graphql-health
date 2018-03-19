@@ -1,9 +1,12 @@
-const { request } = require("../utils");
+const { request, appendUrl } = require("../utils");
+const API_BASE = "http://healthapp-dev.doctorwork.com/mobile/v1";
 
 class ArticleConnector {
 	constructor(ctx) {
 		this.ctx = ctx;
-		this.rpc = request.bind(this);
+		this.rpc = (url, params, data) => {
+			return request.call(this, API_BASE + url, params, data);
+		};
 	}
 
 	async fetch(id, topic) {

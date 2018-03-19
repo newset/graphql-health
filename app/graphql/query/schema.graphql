@@ -1,4 +1,6 @@
 type Query {
 	article(id: String!): Article
 	recommends(id: String!, topic: String!): [Article]
+	building(long: String!, lat: String!): [Building]
+	goods: [Goods]
 }

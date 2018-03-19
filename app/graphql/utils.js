@@ -2,9 +2,7 @@ const base = "http://healthapp-dev.doctorwork.com/mobile/v1";
 
 // request promise
 
-function makeUrl(u, params) {
-	let url = base + u;
-
+function makeUrl(url, params) {
 	if (JSON.stringify(params) === "{}") {
 		return url.replace(/\/{(\w+)}/g, "");
 	}
@@ -16,10 +14,13 @@ function makeUrl(u, params) {
 	);
 }
 
-exports.request = function(url, params) {
+exports.request = function(url, params = {}, data) {
 	return Promise.all([
 		this.ctx.curl(makeUrl(url, params), {
-			dataType: "json"
+			dataType: "json",
+			headers: {
+				Cookie: this._req.cookie
+			}
 		})
 	]).then(map => {
 		return map[0].data;

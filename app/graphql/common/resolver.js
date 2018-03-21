@@ -1,4 +1,10 @@
-const resolver = res => res.data;
+const resolver = res => {
+	const { errcode } = res;
+	if (errcode == 302) {
+		return Promise.reject("Unauthorized");
+	}
+	return res.data;
+};
 
 module.exports = {
 	Query: {

@@ -1,3 +1,5 @@
+############ 健康App ############
+
 type User {
 	id: ID!
 	name: String!
@@ -11,6 +13,10 @@ type Article {
 	cover: String
 }
 
+############ 尿检 ############
+
+## 销售商品
+
 type Goods {
 	goodsType: ID!
 	goodsName: String!
@@ -18,6 +24,8 @@ type Goods {
 	goodsDes: String!
 	imgs: String!
 }
+
+## 设备楼宇记录
 
 type Building {
 	buildingID: String!
@@ -28,4 +36,10 @@ type Building {
 	machineNum: String!
 	address: String!
 	floorStr: String!
+}
+
+# 尿检设备
+
+type Machine {
+	macID: ID!
 }

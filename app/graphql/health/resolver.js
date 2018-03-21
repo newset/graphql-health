@@ -1,4 +1,10 @@
-const resolver = res => res.data;
+const resolver = res => {
+	const { errcode, errmsg } = res;
+	if (errcode == 302) {
+		return Promise.reject(errmsg);
+	}
+	return res.data;
+};
 
 module.exports = {
 	Query: {

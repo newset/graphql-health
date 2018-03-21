@@ -14,12 +14,14 @@ module.exports = () => {
 			port: 7001,
 			hostname: "127.0.0.1"
 			// path: '/var/run/egg.sock',
+		},
+		graphql: {
+			router: false
 		}
 	};
 
 	// should change to your own
 	config.keys = "egg-graphql";
-
 	return config;
 };
 

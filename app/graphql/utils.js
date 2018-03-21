@@ -1,4 +1,5 @@
 const base = "http://healthapp-dev.doctorwork.com/mobile/v1";
+const isLocal = process.env.NODE_ENV === "local";
 
 // request promise
 
@@ -25,4 +26,11 @@ exports.request = function(url, params = {}, data) {
 	]).then(map => {
 		return map[0].data;
 	});
+};
+
+exports.mockCookie = function(key, cookie) {
+	// 获取 cookie
+	this._req = {
+		cookie: { [key]: isLocal ? cookie : this.ctx.cookies.get(key) }
+	};
 };

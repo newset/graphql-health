@@ -16,6 +16,7 @@ function makeUrl(url, params) {
 }
 
 exports.request = function(url, params = {}, data) {
+	console.log("cookie: ", this._req.cookie);
 	return Promise.all([
 		this.ctx.curl(makeUrl(url, params), {
 			dataType: "json",
@@ -31,6 +32,9 @@ exports.request = function(url, params = {}, data) {
 exports.mockCookie = function(key, cookie) {
 	// 获取 cookie
 	this._req = {
-		cookie: { [key]: isLocal ? cookie : this.ctx.cookies.get(key) }
+		cookie:
+			key +
+			"=" +
+			(isLocal ? cookie : this.ctx.cookies.get(key, { signed: false }))
 	};
 };

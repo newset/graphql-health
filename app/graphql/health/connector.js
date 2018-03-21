@@ -10,6 +10,7 @@ class Connector {
 			"urine-miniapp_session_id",
 			"77aa3719-2826-43b1-88e9-6ec2dc212df1"
 		);
+
 		this.rpc = (url, params, data) => {
 			return request.call(this, API_BASE + url, params, data);
 		};

@@ -1,7 +1,7 @@
 const resolver = res => {
 	const { errcode, errmsg } = res;
 	if (errcode == 302) {
-		return Promise.reject(errmsg);
+		return Promise.reject(JSON.stringify({ errcode, errmsg }));
 	}
 	return res.data;
 };

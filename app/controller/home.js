@@ -10,6 +10,8 @@ module.exports = app => {
 			const { ctx } = this;
 			const { query } = ctx.request.body;
 
+			// 登录检查
+
 			const data = await ctx.service.graphql.query(
 				JSON.stringify({ query })
 			); //主查询方法

@@ -16,17 +16,16 @@ function makeUrl(url, params) {
 }
 
 exports.request = function(url, params = {}, data) {
-	console.log("cookie: ", this._req.cookie);
-	return Promise.all([
-		this.ctx.curl(makeUrl(url, params), {
+	return this.ctx
+		.curl(makeUrl(url, params), {
 			dataType: "json",
 			headers: {
 				Cookie: this._req.cookie
 			}
 		})
-	]).then(map => {
-		return map[0].data;
-	});
+		.then(({ data }) => {
+			return data;
+		});
 };
 
 exports.mockCookie = function(key, cookie) {

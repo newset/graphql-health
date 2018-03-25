@@ -14,6 +14,8 @@ RUN npm install --production
 # 配置环境变量
 ENV HOST 0.0.0.0
 ENV PORT 7001
+ENV APP_API_HOST https://healthapp-dev.doctorwork.com/
+ENV SHARE_API_HOST https://urine-analysis-dev.doctorwork.com
 
 # 容器对外暴露的端口号
 EXPOSE 7001

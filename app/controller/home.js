@@ -1,4 +1,5 @@
 "use strict";
+const { graphqlKoa, graphiqlKoa } = require("apollo-server-koa");
 
 module.exports = app => {
 	class HomeController extends app.Controller {
@@ -20,6 +21,14 @@ module.exports = app => {
 				...data,
 				errcode: data.errors ? 400 : 0
 			};
+		}
+
+		graphiql() {
+			const { ctx } = this;
+
+			return graphiqlKoa({
+				endpointURL: "/graphql"
+			})(ctx);
 		}
 	}
 	return HomeController;

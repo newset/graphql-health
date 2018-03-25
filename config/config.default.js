@@ -4,7 +4,7 @@ const idProd = process.env.NODE_ENV === "production";
 
 module.exports = () => {
 	const config = {
-		middleware: ["graphql"],
+		// middleware: ["graphql"],
 		security: {
 			csrf: {
 				ignore: () => true

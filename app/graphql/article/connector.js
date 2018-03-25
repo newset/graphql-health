@@ -1,5 +1,5 @@
 const { request, mockCookie } = require("../utils");
-const API_BASE = "http://healthapp-dev.doctorwork.com/mobile/v1";
+const API_BASE = "https://healthapp-dev.doctorwork.com/mobile/v1";
 
 class ArticleConnector {
 	constructor(ctx) {
